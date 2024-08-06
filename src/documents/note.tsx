@@ -27,7 +27,6 @@ const arrayObject: {
 const tuple: [string, number] = ["elder", 60];
 
 //todo enum
-
 enum Role {
   admin,
   mod,
