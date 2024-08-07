@@ -79,3 +79,39 @@ const course: {
 ];
 
 console.log(ranker(course, ({ difficulty }) => difficulty));
+
+//todo key of
+
+const devices = [
+  {
+    name: "iphone",
+    price: 1000,
+  },
+  {
+    name: "samsung",
+    price: 2000,
+  },
+  {
+    name: "nokia",
+    price: 3000,
+  },
+];
+
+function getDevices<A, B extends keyof A>(items: A[], key: B): A[B][] {
+  return items.map((item) => item[key]);
+}
+
+getDevices(devices, "name");
+
+//todo partial type
+
+interface ICoures {
+  name: string;
+  time: number;
+}
+
+function evondev(todo: ICoures, newTodo: Partial<ICoures>) {
+  return { ...todo, ...newTodo };
+}
+
+console.log(evondev({ name: "React", time: 20 }, {}));
